@@ -1,0 +1,156 @@
+:root {
+    --foreground-deep: #023535;
+    --background-light: #0CABA8;
+    --active-color: #9C3E00;
+    --deac-red: #610716;
+}
+
+body {
+    background-color: var(--background-light);
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    font-family: monospace;
+}
+
+h1 {
+    color: white;
+    font-size: 4rem; /* Adjusted for responsiveness */
+    font-weight: bold;
+    margin: 0;
+    padding: 0;
+}
+
+h2 {
+    color: white;
+    font-size: 1.5rem; /* Adjusted for responsiveness */
+    margin: 0;
+    padding: 0;
+}
+
+#bottomNavBar {
+    position: fixed;
+    bottom: 0;
+    display: grid;
+    background-color: var(--foreground-deep);
+    grid-template-columns: 1fr 1fr 1fr;
+    width: 100%;
+    height: 70px;
+    z-index: 10;
+}
+
+#bottomNavBar div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70px; /* Adjusted height */
+}
+
+#bottomNavBar div div {
+    width: 100%;
+    height: 100%;
+    margin-bottom: 2vh; /* Reduced margin for smaller screens */
+}
+
+#bottomNavBar div div svg {
+    width: 40px; /* Fixed size for consistency */
+    height: 40px; /* Fixed size for consistency */
+}
+
+[data-tab-value] {
+    background-color: var(--foreground-deep);
+}
+
+.active[data-tab-value] {
+    background-color: var(--active-color);
+    transition-duration: 0.3s;
+}
+
+[data-tab-info] {
+    display: none;
+}
+
+.active[data-tab-info] {
+    display: block;
+}
+
+#container {
+    width: 100%;
+    height: auto;
+    padding: 10px;
+    overflow: hidden;
+}
+
+#container #top {
+    background-color: var(--foreground-deep);
+    width: 100%;
+    height: 180px; /* Reduced height for smaller screens */
+    border-radius: 45px; /* Adjusted border radius */
+    padding: 20px;
+    box-sizing: border-box; /* Ensure padding is included in height/width */
+}
+
+#top h1 {
+    margin-left: 20px; /* Adjusted margin */
+    padding-top: 20px; /* Adjusted padding */
+    margin-bottom: 0;
+    font-size: 2.5rem; /* Adjusted font size */
+}
+
+#top h2 {
+    margin-left: 20px; /* Adjusted margin */
+    margin-top: 10px;
+    font-size: 1.2rem; /* Adjusted font size */
+}
+
+#container #logout {
+    position: absolute;
+    bottom: 7%;
+    left: 2.5%;
+    right: 2.5%;
+    background-color: var(--deac-red);
+    height: 50px; /* Adjusted height */
+    border-radius: 24px; /* Adjusted border radius */
+    text-align: center;
+    align-items: center;
+}
+
+#container #logout h2 {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1rem; /* Adjusted font size */
+}
+
+/* Media Queries for Small Screens*/
+@media (max-width: 377px) {
+    h1 {
+        font-size: 3rem;
+    }
+    
+    h2 {
+        font-size: 1rem;
+    }
+    
+    #bottomNavBar {
+        height: 60px;
+    }
+    
+    #bottomNavBar div {
+        height: 60px;
+    }
+    #bottomNavBar div div{
+        height:30%;
+    }
+    
+    #container #top {
+        height: 150px;
+        border-radius: 30px;
+    }
+    
+    #container #logout {
+        height: 45px;
+        border-radius: 20px;
+        margin-bottom:1%;
+    }
+}
